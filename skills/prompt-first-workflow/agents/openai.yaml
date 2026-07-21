@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prompt-First Workflow"
+  short_description: "Clarify tasks before execution with evidence."
+  default_prompt: "Use $prompt-first-workflow to turn my request into an executable, verifiable task before proceeding."
