@@ -1,11 +1,11 @@
 ---
 name: prompt-first-workflow
-description: Apply first-principles prompt engineering to turn every user request into a concise, executable, and verifiable task prompt before acting. Use for projects, changes, debugging, reviews, research, writing, design, and everyday requests when goals, context, constraints, approval boundaries, acceptance criteria, or output requirements need to be made explicit. Always visibly show the executable prompt and confirm material choices before acting, unless the user explicitly says to skip or bypass prompt refinement.
+description: Apply first-principles task framing with a bounded read-only preflight before substantive work. Use for projects, changes, debugging, reviews, research, writing, design, and other tasks where goals, context, constraints, approval boundaries, acceptance criteria, or output requirements need to be explicit. Show an executable task definition before substantive work on complex, open-ended, state-changing, or decision-bearing requests; do not force ceremonial rewrites for simple, already-clear answers or low-risk actions.
 ---
 
 # Prompt-First Workflow
 
-Turn intent into an evidence-driven task. Always visibly show the executable prompt before acting, including for small tasks. Keep it proportionate: one line can be enough for a simple request.
+Turn intent into an evidence-driven task without defining it in a vacuum. Touch the minimum amount of reality needed to frame the work, then make consequential boundaries visible before substantive execution.
 
 ## First-Principles Check
 
@@ -27,16 +27,32 @@ Do not use "first principles" as a slogan. Reduce the request to the information
 6. For multi-step changes, read first, plan the smallest viable slice, change it, verify it, and iterate from the result.
 7. Never claim completion from plausibility. Report actual evidence, remaining risks, and the smallest useful next action.
 
+## Bounded Read-Only Preflight
+
+Before framing a substantive task, gather only enough local context to avoid restating false assumptions.
+
+Allowed preflight actions:
+
+- Read applicable instructions and project rules.
+- Inspect filenames, directories, repository status, metadata, and available materials or tools.
+- Confirm obvious environment constraints and whether supplied artifacts exist.
+
+Do not use preflight to:
+
+- Modify files or external state.
+- Perform broad content analysis or external research.
+- Select architecture, visual direction, product scope, or another material branch.
+- Hide substantive work behind the label "preflight."
+
 ## Intake Protocol
 
-For every request, respond briefly in this order:
+Classify the request before choosing the amount of framing:
 
-1. Restate the inferred outcome in one sentence.
-2. Provide a compact `Executable prompt` that fills known fields and marks only material gaps.
-3. Run the material-choice check below.
-4. Follow the confirmed prompt.
-
-Do not silently omit the visible rewrite because the request seems simple or actionable. Bypass it only when the user explicitly says to skip it, for example: `直接执行`, `跳过提示词整理`, `不触发提示词工作流`, or an unambiguous equivalent. Still use all known constraints.
+1. For complex, open-ended, state-changing, or decision-bearing work, run a bounded preflight when needed.
+2. Restate the inferred outcome and provide a compact `Executable task definition` before substantive work.
+3. Run the material-choice check below and wait only when a material branch remains.
+4. For a simple, already-clear answer or low-risk action, use a one-line confirmation or answer directly. Do not restate the request ceremonially.
+5. If later evidence materially changes scope, architecture, risk, acceptance, publishing, or cost, revise the task definition visibly before continuing.
 
 Use this skeleton. Omit fields that do not affect the task rather than inventing content:
 
@@ -79,6 +95,7 @@ Read [templates.md](references/templates.md) for task templates and [decision-ga
 - For change, build, or fix requests: make in-scope local changes and run relevant non-destructive checks.
 - Require confirmation before external writes, destructive actions, purchases, publishing, or material scope expansion.
 - Keep instructions and tool descriptions lean. State a rule once; remove repeated examples or irrelevant context.
+- Treat the task definition as a control surface, not a deliverable that can replace contact with real artifacts.
 
 ## Handoff Checklist
 

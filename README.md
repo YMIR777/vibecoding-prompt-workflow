@@ -2,7 +2,7 @@
 
 > A first-principles prompt engineering skill for AI agents and chat models.
 
-`Vibe Coding Prompt Workflow` is a publicly available, portable workflow for people who want better results from Codex, Claude Code, Grok, Cursor, ChatGPT, and other AI agents or chat models without memorizing prompt tricks. It makes the task definition visible before work begins: facts, assumptions, goals, constraints, material choices, acceptance evidence, deliverable, and approval boundary.
+`Vibe Coding Prompt Workflow` is a publicly available, portable workflow for people who want better results from Codex, Claude Code, Grok, Cursor, ChatGPT, and other AI agents or chat models without memorizing prompt tricks. It lets an agent inspect the minimum amount of reality needed to avoid false assumptions, then makes consequential task boundaries visible before substantive work begins.
 
 - **Author:** 小黒秋 ([YMIR777](https://github.com/YMIR777))
 - **First published:** 2026-07-22
@@ -20,7 +20,7 @@ Most failures attributed to AI are task-definition failures:
 - “Done” has no observable or testable meaning.
 - The agent quietly makes product or architecture choices that the user never approved.
 
-This workflow addresses those failure modes by requiring a short `Executable prompt` before every task. It does not promise a model is always right. It makes assumptions, choices, evidence, and remaining uncertainty inspectable.
+This workflow addresses those failure modes with a bounded read-only preflight followed by an `Executable task definition` for complex, open-ended, state-changing, or decision-bearing work. It does not force a ceremonial rewrite for a simple, already-clear answer. It makes assumptions, choices, evidence, and remaining uncertainty inspectable when they matter.
 
 ## First Principles
 
@@ -37,12 +37,14 @@ This skill turns “think from first principles” into five concrete actions:
 The operational loop is:
 
 ```text
-Intent -> Context -> Material choices -> Small slice -> Evidence -> Iteration
+Intent -> Bounded preflight -> Task definition -> Small slice -> Evidence -> Iteration
 ```
 
 ## What The Agent Must Do
 
-Before every request, show:
+For substantive work, the agent may first inspect only applicable rules, filenames, repository status, artifact metadata, and available tools. This preflight must not include edits, broad analysis, external research, or material design decisions.
+
+After preflight and before substantive execution, show the relevant parts of:
 
 ```text
 Outcome:
@@ -54,11 +56,11 @@ Requested deliverable:
 Autonomy and approval boundary:
 ```
 
-Keep simple tasks short. Do not omit the prompt silently.
+For a simple, already-clear answer or low-risk action, use a one-line confirmation or answer directly. Do not restate the request merely to satisfy a template.
 
 When an unanswered question would materially change the deliverable, scope, safety, architecture, acceptance, integration, publishing, cost, or maintenance responsibility, list the choices and wait for confirmation. Do not choose a branch for the user.
 
-The only bypass is an explicit user instruction such as `直接执行`, `跳过提示词整理`, `不触发提示词工作流`, or “skip prompt refinement.”
+If later evidence materially changes the scope, architecture, risk, acceptance, publishing outcome, or cost, revise the task definition visibly before continuing.
 
 ## Install Or Use
 
@@ -102,9 +104,11 @@ After those choices are confirmed, the agent can plan a minimal slice, implement
 ## What It Is Not
 
 - Not a long-form prompt template that must be fully filled out every time.
+- Not a requirement to rewrite every clear, low-risk request ceremonially.
 - Not permission for the agent to expand a task, publish work, or make external changes.
 - Not a replacement for domain expertise, source checking, testing, or human judgment.
 - Not a reason to ask questions that do not change the result.
+- Not a substitute for contact with real files, systems, users, or evidence.
 
 ## Foundations
 
@@ -121,6 +125,7 @@ The combined principle is simple: provide enough relevant context to make the ri
 skills/prompt-first-workflow/    Reusable agent skill
 prompts/                         Copyable universal instructions
 docs/project-release-moat.md     Project release and authorship protection checklist
+docs/2026-07-22-bounded-preflight-iteration.md  Decision record for the bounded-preflight iteration
 通用提示词工作流.md                Chinese learning and usage guide
 ```
 

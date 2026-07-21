@@ -1,6 +1,12 @@
 # Prompt Templates
 
-Use the shortest template that makes the task executable. Always show the completed template before acting. Replace brackets with facts; delete irrelevant fields. If a material choice remains, show its options and wait rather than selecting one silently.
+Use the shortest template that makes substantive work executable. For complex, open-ended, state-changing, or decision-bearing work, show the completed template after any bounded preflight and before substantive execution. For simple, already-clear answers or low-risk actions, do not force a ceremonial template. Replace brackets with facts; delete irrelevant fields. If a material choice remains, show its options and wait rather than selecting one silently.
+
+## Bounded Preflight Notice
+
+```text
+I will first inspect [rules / filenames / repository status / supplied artifact metadata] to frame the task accurately. This read-only preflight will not include substantive analysis, external research, edits, or material design decisions.
+```
 
 ## New Project
 

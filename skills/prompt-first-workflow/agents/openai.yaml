@@ -1,4 +1,4 @@
 interface:
   display_name: "Prompt-First Workflow"
-  short_description: "Clarify tasks before execution with evidence."
-  default_prompt: "Use $prompt-first-workflow to turn my request into an executable, verifiable task before proceeding."
+  short_description: "Frame substantive tasks after a bounded preflight."
+  default_prompt: "Use $prompt-first-workflow to inspect only the minimum read-only context, then frame consequential work as an executable, verifiable task before substantive execution."
